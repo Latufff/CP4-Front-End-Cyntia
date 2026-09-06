@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 :root {
     --cor-preto: #121212;
@@ -15,14 +14,14 @@
 }
 
 body {
-    font-family: var (--fonte-base);
-    color: var (--cor-preto);
+    font-family: var(--fonte-base);
+    color: var(--cor-preto);
     line-height: 1.6;
 }
 
 img {
     max-width: 100%;
-    display: black;
+    display: block;
 }
 
 a {
@@ -110,6 +109,7 @@ a {
 }
 
 /* Seção 2 */
+
 .secao-2 {
     background-color: var(--cor-off-white);
     padding: 40px;
@@ -135,4 +135,48 @@ a {
     transform: scale(1.04);
     opacity: 0.9;
 }
+
 /* ----- Responsividade ----- */
+
+@media (max-width: 1024px) {
+    .container-secao-1 {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .galeria-3 img {
+        height: 110px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-secao-1 {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hero"
+            "texto"
+            "galeria";
+        padding: 70px 20px;
+    }
+
+    .hero-img img {
+        height: 220px;
+    }
+
+    .galeria-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .galeria-3 img {
+        height: 80px;
+    }
+
+    .secao-2 {
+        padding: 20px;
+    }
+
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-auto-rows: 150px;
+    }
+}
